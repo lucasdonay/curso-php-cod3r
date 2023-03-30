@@ -4,7 +4,6 @@
   box-sizing: border-box;
   text-decoration: none;
   font-family: 'Poppins', sans-serif;
-  color: #FFFFFF;
 }
 
 html {
@@ -16,6 +15,7 @@ html {
 
 body {
   background-color: #FFF;
+
 }
 
 img {
@@ -34,6 +34,7 @@ button {
   max-width: 133rem;
   padding: 0 55px;
   margin: 0 auto;
+
 }
 
 a {
@@ -42,11 +43,12 @@ a {
 
 header {
   height: 10rem;
-  background: blueviolet;
+  background: mediumslateblue;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: white;
 }
 
 h1 {
@@ -70,8 +72,8 @@ h1 {
 .card {
   background: #ffffff;
   width: 100%;
-  height: auto;
-  padding-bottom: 20px;
+  height: 320px;
+  padding-bottom: 40px;
   max-width: 250px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px rgba(12,12,13,0.25);
@@ -82,7 +84,7 @@ h1 {
 }
 
 .card:hover {
-  background-color: hsla(271, 79%, 43%,66%);
+  background-color: hsla(249, 80%, 67%,90%);
   transform: scale(1.03);
   color: white;
 }
@@ -124,29 +126,37 @@ h1 {
 .card ul{
   display: flex;
   flex-direction: column;
-  align-items: left;
   text-align: left;
   padding-left: 30px;
   margin-top: 20px;
   color: white;
 }
+
 .conteudo {
-  color: black;
+  color: black !important;
   font-size: 2rem;
-  margin-top: 20px;
+  margin-top: 40px;
 }
+
 .navegacao {
-  background: black;
+  background: #EEEEEE;
   width: 100%;
   height: 7rem;
   display: flex;
-  justify-content: end;
-  gap: 50px;
-  padding-right: 100px;
+  justify-content: space-between;
+  padding-inline: 50px;
   align-items: center;
+  color: white;
 }
+
+.buttons {
+  display: flex;
+  gap: 30px;
+  margin-right: 40px;
+}
+
 .navegacao a {
-  background: blueviolet;
+  background: hsla(249, 80%, 67%);;
   height: 44px;
   padding: 6px;
   border-radius: 6px;
@@ -155,8 +165,10 @@ h1 {
   opacity: 0.9;
   font-size: 1.7rem;
   font-weight: 700;
+  color: white;
   text-transform: uppercase;
 }
+
 .navegacao a:hover {
   opacity:1;
 }
