@@ -50,8 +50,15 @@ switch ($_POST['conversao']) {
         $conversao = ($param - 32) / FATOR_CEL_FAH;
         $mensagem = "{$param}° Fahrenheit = {$conversao}° Celsius";
         break;
+    case 'param = 0':
+        $mensagem = "Nenhum valor calculado!";
+        break;
     default:
         $mensagem = "Nenhum valor calculado!";
+}
+
+if ($param = 0 || ""){
+    $mensagem = "Nenhum valor calculado!";
 }
 
 echo "<p>$mensagem</p>";

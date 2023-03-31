@@ -31,37 +31,77 @@
     }
 </style>
 
+
 <?php
 
-if(isset($_POST['t1']) && isset($_POST['t2'])) {
+
+if (isset($_POST['t1']) && isset($_POST['t2'])) {
     $t1 = $_POST['t1'] === '1';
     $t2 = !!$_POST['t2'];
     $tv = '';
     $sorvete = false;
+    $cobertura = false;
 
-    if($t1 && $t2) {
-        $tv = '50"';
+    if ($t1 && $t2) {
+        $tv= '50';
     } elseif($t1 xor $t2) {
-        $tv = '32"';
+        $tv = '36';
+    }
+
+    if ($t1 && $t2) {
+        $cobertura = true;
     }
 
     if($t1 or $t2) {
         $sorvete = true;
     }
 
+    $coberturaSim = !$cobertura;
+
+    $saudavel = !$sorvete;
+
     if($tv) {
-    $resultado = "Vamos comprar uma TV de $tv";
+        $resultado = "Vamos comprar uma tv de $tv !!";
     } else {
         $resultado = "Sem TV dessa vez :(";
     }
 
-    $saudavel = !$sorvete;
-
-    if($saudavel) {
-        $resultado .= '<br>Estamos mais saudáveis!';
+    if ($saudavel) {
+        $resultado .= "<br>Estamos mais saudaveis :)";
     } else {
-        $resultado .= '<br>Sorvete liberado \o/';
+        $resultado .= '<br> Sorvete liberado!';
     }
 
+    $coberturaSim ? $resultado .= "<br>Nao Vai ter cobertura" : $resultado .= "<br>Vai ter cobertura";
+
+
     echo "<p>$resultado</p>";
+};
+
+?>
+
+
+
+<form action="#" method="post">
+    <div>
+        <label for="c1">Estados:</label>
+        <select name="c1" id="c1">
+            <option value="1">Minas Gerais</option>
+            <option value="5">Sao paulo</option>
+        </select>
+    </div>
+    <button>Executar</button>
+</form>
+
+<?php
+
+if (isset($_POST['c1'])) {
+$c1 = $_POST['c1'];
+if ($c1 === '1') {
+    echo "UBERABA,UBERLANDIA";
+} elseif($c1 === '5') {
+    echo "Sao Paulo,Ribeirao Preto";
+} else {
+    echo "selecione algo";
 }
+};
